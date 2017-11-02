@@ -49,8 +49,9 @@ actual = std(data, ddof=1)
 approx1 = one_pass(data)
 approx2 = two_pass(data)
 
-print("1:", relative_error(actual, approx1))
-print("2:", relative_error(actual, approx2))
+if __name__ == '__main__':
+	print("1:", relative_error(actual, approx1))
+	print("2:", relative_error(actual, approx2))
 
 ''' Now lets explore the std of a sequence with predetermined variance. '''
 from numpy.random import normal
@@ -69,8 +70,9 @@ ac2 = std(seq2, ddof=1)
 rel1p2 = relative_error(ac2, sig1p2)
 rel2p2 = relative_error(ac2, sig2p2)
 
-print("Relative Errors:")
-print("seq1, one_pass:", rel1p1)
-print("seq1, two_pass:", rel2p1)
-print("seq1, one_pass:", rel1p2)
-print("seq1, two_pass:", rel2p2)
+if __name__ == '__main__':
+	print("Relative Errors:")
+	print("seq1, one_pass:", rel1p1)
+	print("seq1, two_pass:", rel2p1)
+	print("seq1, one_pass:", rel1p2)
+	print("seq1, two_pass:", rel2p2)
