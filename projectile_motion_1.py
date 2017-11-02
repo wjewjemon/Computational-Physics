@@ -1,7 +1,11 @@
 """ Projectile Motion
 
-Here I simulate the motion of a small projectile. At first, only gravity is accounted for as I tackle projectile motion in a vacuum. Later on the effects of drag and spin are considered to account for air resistance.
-Euler's method is used for numerical integration to simulate the trajectory of the projectile.
+Here I simulate the motion of a small projectile. At first, only gravity is 
+accounted for as I tackle projectile motion in a vacuum. Later on the effects of
+ drag and spin are considered to account for air resistance.
+ 
+Euler's method is used for numerical integration to simulate the trajectory of 
+the projectile.
 """
 from numpy import zeros, arange, cos, sin, pi, sqrt, argmax
 from pylab import figure, plot, title, xlabel, ylabel, show
