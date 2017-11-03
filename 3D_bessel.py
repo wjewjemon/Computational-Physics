@@ -1,5 +1,5 @@
-''' A 3D plot of a circular membrane that satisfies laplace's eqn for specified
-conditions '''
+''' A 3D plot of a circular membrane that satisfies the wave equation for 
+specified conditions '''
 from numpy import cos, sin, pi, sqrt, arange, meshgrid, arctan
 from pylab import figure, plot, title, legend, show, cm
 from scipy.special import jv
