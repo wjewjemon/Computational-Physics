@@ -10,7 +10,7 @@ def PartialPivot(A_in,v_in):
     for m in range(N):
         #if not zero use Gaussian Elimintaion
         if A[m,m] > 1.0e-16:
-            print('gauss')
+            #print('gauss')
             #Division by the diagonal element
             div = A[m,m]
             A[m,:] /= div
@@ -24,7 +24,7 @@ def PartialPivot(A_in,v_in):
             
         #if zero must pivot the Element using partial pivots
         else:
-            print('partial')
+            #print('partial')
             p = m
             for i in range(m+1,N):
                 #finding the pivot point

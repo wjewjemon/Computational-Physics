@@ -10,13 +10,23 @@ from numpy import array
 
 #Implement Gaussian Elimination
 #This should be non-destructive for input arrays, so we will copy A and v to temporary variables
-def GaussElim(A_in,v_in):
+def GaussElim(A_in,v_in,pivot=False):
     #copy A and v to temporary variables using copy command
     A = copy(A_in)
     v = copy(v_in)
     N = len(v)
     
     for m in range(N):
+        
+        # partial pivot
+        if pivot:
+            swap = m
+            for i in range(m+1, N):
+                if abs(A[i, m]) > abs(A[swap, m]):
+                    swap = i
+            if swap > m:
+                v[swap], v[m] = v[m], v[swap]
+                A[m, :], A[swap, :] = copy(A[swap, :]), copy(A[m, :])
     
         # Divide by the diagonal element
         div = A[m,m]
@@ -39,10 +49,7 @@ def GaussElim(A_in,v_in):
     return x
     
 def PartialPivot(A_in,v_in):
-    print('hello')
-
-A = array([[2,	1,	4,	1],	[3,	4,	-1,	-1],	[1,	-4,	1,	5], [2,	-2,	1,	3]])
-v = array([-4,	3,	9,	7])
+    return GaussElim(A_in, v_in, pivot=True)
 
 
         
